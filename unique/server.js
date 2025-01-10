@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // MongoDB Connection
 mongoose
   .connect(
-    "mongodb+srv://amiruncodemy:x86Gg0op2iGx0dhG@cluster0.kzkkh.mongodb.net/",
+    "mongodb+srv://amiruncodemy:x86Gg0op2iGx0dhG@cluster0.kzkkh.mongodb.net/unique-key",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
