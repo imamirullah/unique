@@ -1,0 +1,109 @@
+// let counter = localStorage.getItem("counter")
+//   ? parseInt(localStorage.getItem("counter"))
+//   : 451;
+
+// // Track downloaded certificates based on IP and name
+// const downloadedCertificates = {};
+
+// // Check sessionStorage to see if the user has already generated the certificate
+// window.onload = function () {
+//   // Show the certificate form if the user hasn't generated a certificate yet
+//   if (!sessionStorage.getItem("certificateGenerated")) {
+//     document.getElementById("certificateForm").style.display = "block";
+//     document.getElementById("certificate").style.display = "none";
+//     document.getElementById("downloadButton").style.display = "none";
+//   } else {
+//     document.getElementById("certificateForm").style.display = "none";
+//     document.getElementById("certificate").style.display = "block";
+//     document.getElementById("downloadButton").style.display = "inline-block";
+//   }
+// };
+
+// document
+//   .getElementById("generateButton")
+//   .addEventListener("click", function () {
+//     const name = document.getElementById("nameInput").value.trim();
+//     const email = document.getElementById("emailInput").value.trim();
+//     const phone = document.getElementById("phoneInput").value.trim();
+
+//     // Clear previous error messages
+//     document
+//       .querySelectorAll(".error")
+//       .forEach((error) => (error.textContent = ""));
+
+//     // Validation
+//     let isValid = true;
+//     if (!name) {
+//       document.getElementById("nameError").textContent = "Name is required.";
+//       isValid = false;
+//     }
+//     if (!email) {
+//       document.getElementById("emailError").textContent = "Email is required.";
+//       isValid = false;
+//     }
+//     if (!phone) {
+//       document.getElementById("phoneError").textContent =
+//         "Phone number is required.";
+//       isValid = false;
+//     }
+
+//     if (!isValid) return;
+
+//     // Generate certificate
+//     document.getElementById("userName").textContent = name;
+//     counter++;
+//     document.getElementById(
+//       "Uc"
+//     ).textContent = `UC / 2025 / 01 / ${counter}`;
+
+//     // Show the certificate and download button
+//     document.getElementById("certificate").style.display = "block";
+//     document.getElementById("downloadButton").style.display = "inline-block";
+//     document.getElementById("certificateForm").style.display = "none";
+
+//     // Mark the certificate as generated
+//     sessionStorage.setItem("certificateGenerated", true);
+
+//     // Track download for the IP and name
+//     fetch("https://api.ipify.org?format=json")
+//       .then((response) => response.json())
+//       .then((data) => {
+//         const userIP = data.ip;
+//         if (!downloadedCertificates[userIP]) {
+//           downloadedCertificates[userIP] = [];
+//         }
+//         // Add the name to the list of downloaded certificates for the IP
+//         downloadedCertificates[userIP].push(name);
+//       });
+
+//     // Save the updated counter to localStorage
+//     localStorage.setItem("counter", counter);
+//   });
+
+// document
+//   .getElementById("downloadButton")
+//   .addEventListener("click", function () {
+//     // Use html2pdf.js to download the certificate as a PDF
+//     const certificate = document.getElementById("certificate");
+
+//     const name = document.getElementById("nameInput").value.trim();
+//     document.getElementById("userName").textContent = name;
+//     counter++;
+//     document.getElementById("Uc").textContent = `UC / 2025 / 01 / ${counter}`;
+
+//     html2pdf()
+//       .from(certificate)
+//       .save("certificate.pdf")
+//       .then(() => {
+//         // Reset the form fields and hide the certificate after download
+//         document.getElementById("nameInput").value = "";
+//         document.getElementById("emailInput").value = "";
+//         document.getElementById("phoneInput").value = "";
+//         document.getElementById("certificateForm").style.display = "block";
+//         document.getElementById("certificate").style.display = "none";
+//         document.getElementById("downloadButton").style.display = "none";
+
+//         // Save the updated counter to localStorage again after download
+//         localStorage.setItem("counter", counter);
+//       });
+//   });

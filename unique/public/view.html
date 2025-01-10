@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Certificate</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h3>View Your Certificate</h3>
+    <input type="text" id="uniqueKeyInput" placeholder="Enter your unique key">
+    <div id="keyError" class="error"></div>
+    <button id="showCertificateButton">Show Certificate</button>
+
+    <div id="certificateContainer" style="display: none;">
+      <div id="certificate">
+        <p class="name" id="userName"></p>
+        <p class="Uc" id="Uc"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="view.js"></script>
+</body>
+</html>

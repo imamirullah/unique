@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Certificate Template -->
+    <div id="certificate" style="display: none;">
+      <p class="name" id="userName"></p>
+      <p class="Uc" id="Uc"></p>
+    </div>
+
+    <!-- Form for User Input -->
+    <div class="form-container">
+      <form id="certificateForm">
+        <h3>Download Certificate</h3>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <div id="nameError" class="error"></div>
+        <input type="email" id="emailInput" placeholder="Enter your email">
+        <div id="emailError" class="error"></div>
+        <input type="tel" id="phoneInput" placeholder="Enter your phone number">
+        <div id="phoneError" class="error"></div>
+        <button type="button" id="generateButton">Generate Certificate</button>
+      </form>
+
+      <!-- Unique Key Input Section -->
+      <div id="uniqueKeyInputContainer" style="display: none; margin-top: 20px;">
+        <label for="uniqueKeyInput">Enter Unique Key:</label>
+        <input type="text" id="uniqueKeyInput" placeholder="Enter your unique key">
+        <div id="uniqueKeyError" class="error"></div>
+        <button type="button" id="verifyButton">Verify and Download</button>
+      </div>
+
+      <!-- Download Button -->
+      <button id="downloadButton" style="display: none;">Download Certificate</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
