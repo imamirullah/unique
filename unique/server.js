@@ -76,7 +76,7 @@ app.post("/generate", async (req, res) => {
   try {
     // Check if the certificate already exists based on email and phone
     const existingCertificate = await Certificate.findOne({ email, phone });
-    const uniqueKey = `Uncodemy-${Math.floor(100000 + Math.random() * 900000)}`;
+    const uniqueKey = `U-${Math.floor(100000 + Math.random() * 900000)}`;
 
     if (existingCertificate) {
       // If certificate already exists, return a message to prevent re-download
