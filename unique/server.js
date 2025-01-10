@@ -17,7 +17,8 @@ app.use(express.static(path.join(__dirname, "public")));
 // MongoDB Connection
 mongoose
   .connect(
-    "mongodb+srv://amiruncodemy:x86Gg0op2iGx0dhG@cluster0.kzkkh.mongodb.net/unique-key",
+    // "mongodb+srv://at604281:wetware9211@dashboarddb.ysw862b.mongodb.net/CERTIFICATE-DB",
+    "mongodb+srv://amiruncodemy:x86Gg0op2iGx0dhG@cluster0.kzkkh.mongodb.net/CERTIFICATE",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
