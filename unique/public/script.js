@@ -73,7 +73,7 @@ document
     }
 
     try {
-      const response = await fetch("http://localhost:5000/download", {
+      const response = await fetch("/download", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ uniqueKey }),
